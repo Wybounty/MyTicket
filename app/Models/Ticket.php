@@ -35,21 +35,25 @@ class Ticket extends Model
         ];
     }
 
+    /** @return BelongsTo<Produit, $this> */
     public function produit(): BelongsTo
     {
         return $this->belongsTo(Produit::class, 'id_produit', 'id_produit');
     }
 
+    /** @return BelongsTo<User, $this> */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'id_user');
     }
 
+    /** @return HasMany<PieceJointe, $this> */
     public function pieceJointes(): HasMany
     {
         return $this->hasMany(PieceJointe::class, 'id_ticket', 'id_ticket');
     }
 
+    /** @return HasMany<Log, $this> */
     public function logs(): HasMany
     {
         return $this->hasMany(Log::class, 'id_ticket', 'id_ticket');

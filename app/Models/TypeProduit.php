@@ -17,6 +17,7 @@ class TypeProduit extends Model
         'libelle',
     ];
 
+    /** @return HasMany<Produit, $this> */
     public function produits(): HasMany
     {
         return $this->hasMany(Produit::class, 'id_type_produit', 'id_type_produit');

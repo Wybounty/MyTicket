@@ -15,6 +15,7 @@ class Role extends Model
         'libelle',
     ];
 
+    /** @return HasMany<User, $this> */
     public function users(): HasMany
     {
         return $this->hasMany(User::class, 'id_role', 'id_role');

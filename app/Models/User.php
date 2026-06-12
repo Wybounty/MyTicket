@@ -51,16 +51,19 @@ class User extends Authenticatable implements PasskeyUser
         ];
     }
 
+    /** @return BelongsTo<Role, $this> */
     public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class, 'id_role', 'id_role');
     }
 
+    /** @return HasMany<Ticket, $this> */
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class, 'id_user');
     }
 
+    /** @return HasMany<Log, $this> */
     public function logs(): HasMany
     {
         return $this->hasMany(Log::class, 'id_user');

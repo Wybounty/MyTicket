@@ -19,6 +19,7 @@ class PieceJointe extends Model
         'id_ticket',
     ];
 
+    /** @return BelongsTo<Ticket, $this> */
     public function ticket(): BelongsTo
     {
         return $this->belongsTo(Ticket::class, 'id_ticket', 'id_ticket');
