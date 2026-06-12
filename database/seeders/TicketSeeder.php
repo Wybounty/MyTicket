@@ -13,24 +13,16 @@ class TicketSeeder extends Seeder
 {
     public function run(): void
     {
-        $adminRole = Role::where('libelle', 'Administrateur')->first();
         $produit = Produit::first();
 
         if (! $produit) {
             return;
         }
 
-        $user = User::firstOrCreate(
-            ['email' => 'admin@myticket.test'],
-            [
-                'name' => 'Admin MyTicket',
-                'password' => Hash::make('password'),
-                'id_role' => $adminRole?->id_role,
-            ]
-        );
+        $user = User::first();
 
-        if ($adminRole && ! $user->id_role) {
-            $user->update(['id_role' => $adminRole->id_role]);
+        if (! $user) {
+            return;
         }
 
         Ticket::firstOrCreate(
