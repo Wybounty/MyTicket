@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <Head title="Home" />
-            <section className="flex flex-col items-center justify-center h-screen bg-[#242424]">
+            <section className="flex flex-col items-center justify-center min-h-screen bg-[#242424] pt-10 pb-10">
                 <h1>MyTicket</h1>
                 <form className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md space-y-6 text-black">
 

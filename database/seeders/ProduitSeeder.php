@@ -23,6 +23,24 @@ class ProduitSeeder extends Seeder
                     'id_type_produit' => $logiciel->id_type_produit,
                 ]
             );
+            Produit::firstOrCreate(
+                ['reference' => 'SW-002'],
+                [
+                    'nom_produit' => 'MyTicket Application 2',
+                    'description' => 'Application de gestion de tickets support.',
+                    'image' => null,
+                    'id_type_produit' => $logiciel->id_type_produit,
+                ]
+            );
+            Produit::firstOrCreate(
+                ['reference' => 'SW-003'],
+                [
+                    'nom_produit' => 'MyTicket Application 3',
+                    'description' => 'Application de gestion de tickets support.',
+                    'image' => null,
+                    'id_type_produit' => $logiciel->id_type_produit,
+                ]
+            );
         }
 
         if ($materiel) {
@@ -31,6 +49,33 @@ class ProduitSeeder extends Seeder
                 [
                     'nom_produit' => 'Poste de travail',
                     'description' => 'Ordinateur de bureau standard.',
+                    'image' => null,
+                    'id_type_produit' => $materiel->id_type_produit,
+                ]
+            );
+            Produit::firstOrCreate(
+                ['reference' => 'HW-002'],
+                [
+                    'nom_produit' => 'Imprimante',
+                    'description' => 'Imprimante standard.',
+                    'image' => null,
+                    'id_type_produit' => $materiel->id_type_produit,
+                ]
+            );
+            Produit::firstOrCreate(
+                ['reference' => 'HW-003'],
+                [
+                    'nom_produit' => 'Téléphone 3',
+                    'description' => 'Téléphone standard.',
+                    'image' => null,
+                    'id_type_produit' => $materiel->id_type_produit,
+                ]
+            );
+            Produit::firstOrCreate(
+                ['reference' => 'HW-004'],
+                [
+                    'nom_produit' => 'Téléphone 4',
+                    'description' => 'Téléphone standard.',
                     'image' => null,
                     'id_type_produit' => $materiel->id_type_produit,
                 ]
